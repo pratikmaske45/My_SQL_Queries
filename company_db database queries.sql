@@ -59,6 +59,42 @@ insert into employee4 (empid, firstname, lastname)
 values (2, 'kirti' , 'girl');
 select *  from employee4;
 
+-- next lecture
+
+
+use company_db;
+create table employee8 ( empid int primary key, firstname varchar(10), lastname varchar(10), empage int,salary int);
+alter table employee8 add check(salary>=5000);
+
+alter table employee8 add constraint chk_emp_age_salary
+check (empage>20 and salary>=5000);
+desc employee8;
+
+show create table employee8;
+insert into employee8 values(1, 'Ram' , 'Gore' , 23 , 8000);
+
+select * from employee8;
+alter table employee8 drop check employee8_chk_1;
+desc employee8;
+show create table employee8;
+
+
+create index demoindex on employee8(firstname);
+show indexes from employee8;
+create index demoindex2 on employee8(firstname, lastname);
+drop  index demoindex on employee8;
+drop  index demoindex2 on employee8;
+
+
+
+
+
+
+ 
+
+
+
+
 
 
 
